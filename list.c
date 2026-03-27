@@ -133,12 +133,12 @@ void pushCurrent(List * list, void * data)
     //en cualquier otro caso la lista deberia poder insertar el dato
     Node* auxiliar= (Node *) malloc(sizeof(Node));
     auxiliar->data = data;
-
+    //esto funciona cuando estamos en la ultima casilla?
     //hacemos que apunten al mismo sitio
     auxiliar->next= list->current->next;
-    //ahora el antiguo current apunta a auxiliar! pero lo dejamos en el previo?
-    list->current->next= auxiliar->prev;
-    
+    //ahora el antiguo current apunta a auxiliar!
+    list->current->next= auxiliar;
+    auxiliar->prev= list->current;
     
 }
 

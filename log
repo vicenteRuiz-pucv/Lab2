@@ -252,3 +252,9 @@ list.c:140:34: error: ‘*auxiliar.prev’ is used uninitialized [-Werror=uninit
       |                          ~~~~~~~~^~~~~~
 cc1: all warnings being treated as errors
 7085e38
+Fri Mar 27 04:29:26 AM UTC 2026: 
+ list.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+ tests:  10|2
+total_score: 40/60
+de07f75
