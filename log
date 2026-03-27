@@ -229,3 +229,9 @@ list.c:112:23: error: ‘NuevoNodo’ undeclared (first use in this function); d
       |                       nuevoNodo
 list.c:112:23: note: each undeclared identifier is reported only once for each function it appears in
 2792985
+Fri Mar 27 03:47:42 AM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|3
+total_score: 30/60
+1686e48

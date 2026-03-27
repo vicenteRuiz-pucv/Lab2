@@ -109,7 +109,7 @@ void pushFront(List * list, void * data)
     }
     //hacemos las conexiones?
     nuevoNodo->next= list->head;
-    list->head->prev= NuevoNodo->next;
+    list->head->prev= nuevoNodo->next;
     //renombramos el head
     list->head= nuevoNodo;
     
