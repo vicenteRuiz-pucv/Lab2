@@ -135,11 +135,12 @@ void pushCurrent(List * list, void * data)
     auxiliar->data = data;
     //esto funciona cuando estamos en la ultima casilla?
     //hacemos que apunten al mismo sitio
-    auxiliar->next= list->current->next;
+    auxiliar->next= list->tail->next;
     //ahora el antiguo current apunta a auxiliar!
-    list->current->next= auxiliar;
-    auxiliar->prev= list->current;
-    list->current = auxiliar;
+    list->tail->next= auxiliar;
+    auxiliar->prev= list->tail;
+    list->tail = auxiliar;
+    list->current= list->tail:
 }
 
 void * popFront(List * list) {
