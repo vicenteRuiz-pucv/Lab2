@@ -60,7 +60,7 @@ void * firstList(List * list) {
 void * nextList(List * list) {
     //RETORNAR DATO SIGUIENTE DEL CURRENT Y ACTUALIZAR CURRENT A NEXT
     //siento que debe faltar alguna pregunta.
-    if(list->current->next == NULL) return NULL;
+    if(list->current->next == NULL) return list->current->data;
     list->current= list->current->next;
     
     return list->current->data;
