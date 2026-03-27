@@ -60,10 +60,16 @@ void * firstList(List * list) {
 void * nextList(List * list) {
     //RETORNAR DATO SIGUIENTE DEL CURRENT Y ACTUALIZAR CURRENT A NEXT
     //siento que debe faltar alguna pregunta.
-    if(list->current->next == NULL) return list->current->data;
-    list->current= list->current->next;
-    
-    return list->current->data;
+    //CAMBIAMOS LA LOGICA, SI EL SIGUIENTE NO ES NULL PODEMOS HACER LO DE ANTES Y SI NO RETORNAMOS NULL!
+    if(list->current->next != NULL) 
+    {
+        list->current= list->current->next;
+        return list->current->data;
+    }
+
+
+
+    return NULL;
 }
 
 // 3. Programe las funciones void * lastList(List * list) y void * prevList(List * list).
