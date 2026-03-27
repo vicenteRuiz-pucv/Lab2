@@ -241,3 +241,14 @@ Fri Mar 27 03:51:41 AM UTC 2026:
  tests:  10|2
 total_score: 40/60
 b82c5f4
+Fri Mar 27 04:27:45 AM UTC 2026: 
+ list.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:140:34: error: ‘*auxiliar.prev’ is used uninitialized [-Werror=uninitialized]
+  140 |     list->current->next= auxiliar->prev;
+      |                          ~~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+7085e38

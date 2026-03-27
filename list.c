@@ -111,10 +111,11 @@ void pushFront(List * list, void * data)
     //hacemos las conexiones?
     //EL SIGUIENTE DE EL NUEVO NODO ES EL HEAD!
     nuevoNodo->next= list->head;
-    //ENLAZAMOS LOS PREVIOS Y SIGUIENTES!
+    //ENLAZAMOS el PREVIOS Y SIGUIENTE!
     list->head->prev= nuevoNodo->next;
-    //renombramos el head
+    //definimos la antigua cabeza como el ultimo dato!
     list->tail= list->head;
+    //ahora la cabeza es el nuevo nodo!
     list->head= nuevoNodo;
     
 }
@@ -126,7 +127,19 @@ void pushBack(List * list, void * data) {
 
 // 5. Programe la función void pushCurrent(List * list, void* data), la cual agrega un dato a continuación del nodo apuntado por list->current.
 
-void pushCurrent(List * list, void * data) {
+void pushCurrent(List * list, void * data) 
+{
+    //debemos pensar en el caso especial el cual es si actual es null
+    //en cualquier otro caso la lista deberia poder insertar el dato
+    Node* auxiliar= (Node *) malloc(sizeof(Node));
+    auxiliar->data = data;
+
+    //hacemos que apunten al mismo sitio
+    auxiliar->next= list->current->next;
+    //ahora el antiguo current apunta a auxiliar! pero lo dejamos en el previo?
+    list->current->next= auxiliar->prev;
+    
+    
 }
 
 void * popFront(List * list) {
@@ -142,7 +155,9 @@ void * popBack(List * list) {
 // 6. Programe la función void* popCurrent(List * list), la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el dato del nodo eliminado.
 // Nota: El current debe quedar apuntando al nodo siguiente del eliminado.
 
-void * popCurrent(List * list) {
+void * popCurrent(List * list) 
+{
+    
     return NULL;
 }
 
