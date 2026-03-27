@@ -52,7 +52,7 @@ void * firstList(List * list) {
     //SUPONDRE QUE LA LISTA ESTA LLENADA PARA PODER RECORRERLA
     //RETORNAR DATO DEL HEAD Y ACTUALIZAR CURRENT PARA QUE APUNTE A ESE NODO
     //NO PODEMOS RETORNAR APUNTANDO, DEBE SER EN UNA VARIABLE TIPO VOID!
-    if(lista == NULL) return NULL;
+    if(list == NULL) return NULL;
     list->current = list->head;
     return list->head->data;
 }
