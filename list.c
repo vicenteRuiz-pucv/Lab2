@@ -142,7 +142,7 @@ void pushCurrent(List * list, void * data)
     //conectamos el nodo previo a auxiliar(ahora es el ultimo) con el nodo current!
     auxiliar->prev= list->current;
     //dejamos auxiliar como el tail!
-    list->tail = auxiliar;
+    //list->tail = auxiliar;
 }
 
 void * popFront(List * list) {
