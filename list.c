@@ -140,7 +140,7 @@ void pushCurrent(List * list, void * data)
     list->tail->next= auxiliar;
     auxiliar->prev= list->tail;
     list->tail = auxiliar;
-    list->current= list->tail:
+    list->current= list->tail;
 }
 
 void * popFront(List * list) {
