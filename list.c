@@ -82,8 +82,8 @@ void * lastList(List * list) {
 
 void * prevList(List * list) {
     if(list == NULL || list->head == NULL) return NULL;
-    //QUE OCURRE SI ESTAMOS PARADOS EN EL PRIMERO? retornamos lo de el primero? o null?
-    if(list->current->data == list->head->data) return list->head->data;
+    //QUE OCURRE SI ESTAMOS PARADOS EN EL PRIMERO? retornamos NULL!!
+    if(list->current->data == list->head->data) return NULL;
     //EN MEDIO DE LA LISTA!
     list->current= list->current->prev;
     return list->current->data;
