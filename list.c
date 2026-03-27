@@ -34,8 +34,14 @@ Node * createNode(void * data) {
 // 1. Programe la función List* createList(), la cual retorna el puntero del tipo de dato List con sus valores inicializados en NULL.
 // Recuerda reservar memoria al puntero usando malloc o calloc.
 
-List * createList() {
-     return NULL;
+List * createList() 
+{
+    List* lista = (List *) malloc(sizeof(List));
+    lista->head = NULL;
+    lista->tail = NULL;
+    lista->current= NULL;
+    
+    return lista;
 }
 
 // 2. Programe las funciones void * firstList(List * list) y void * nextList(List * list).
