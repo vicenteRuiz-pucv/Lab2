@@ -105,12 +105,16 @@ void pushFront(List * list, void * data)
     //si esta vacia!
     if(list == NULL || list->head == NULL)
     {
-        list->head= nuevoNodo; 
+        list->head= nuevoNodo;
+        list->tail= nuevoNodo;
     }
     //hacemos las conexiones?
+    //EL SIGUIENTE DE EL NUEVO NODO ES EL HEAD!
     nuevoNodo->next= list->head;
+    //ENLAZAMOS LOS PREVIOS Y SIGUIENTES!
     list->head->prev= nuevoNodo->next;
     //renombramos el head
+    list->tail= list->head;
     list->head= nuevoNodo;
     
 }
