@@ -185,7 +185,7 @@ void* popCurrent(List * list)
         //LUEGO DEBEMOS DEJAR EL PREVIO A CURRENT EN NULL
         list->current->prev= NULL;
         //USAMOS EL CLEAN EN EL HEAD
-        clean(list->head);
+        free(list->head);
         //DEFINIMOS HEAD COMO EL CURRENT
         list->head= list->current;
         //RETORNAMOS DATO
@@ -200,7 +200,7 @@ void* popCurrent(List * list)
         //LUEGO DEBEMOS DEJAR EL SIGUIENTE A CURRENT EN NULL
         list->current->next= NULL;
         //USAMOS EL CLEAN EN EL TAIL
-        clean(list->tail);
+        free(list->tail);
         //DEFINIMOS TAIL COMO EL CURRENT
         list->tail= list->current;
         //RETORNAMOS DATO
