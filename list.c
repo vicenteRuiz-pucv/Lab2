@@ -212,7 +212,7 @@ void* popCurrent(List * list)
     list->current->prev->next= list->current->next;
     //CONECTAMOS EL NODO SIGUIENTE CON EL NODO ANTERIOR
     list->current->next->prev= list->current->prev;
-    clean(list->current);
+    free(list->current);
     return dato;
 }
 
