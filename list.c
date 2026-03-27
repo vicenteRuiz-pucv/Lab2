@@ -51,14 +51,18 @@ List * createList()
 void * firstList(List * list) {
     //SUPONDRE QUE LA LISTA ESTA LLENADA PARA PODER RECORRERLA
     //RETORNAR DATO DEL HEAD Y ACTUALIZAR CURRENT PARA QUE APUNTE A ESE NODO
-    //NO PODEMOS RETORNAR APUNTANDO, DEBE SER EN UNA VARIABLE TIPO VOID!
+    //si se puede retornar apuntando, el error era no preguntar.., debere preguntar siempre?
     if(list == NULL || list->head == NULL) return NULL;
     list->current = list->head;
     return list->head->data;
 }
 
 void * nextList(List * list) {
-    return NULL;
+    //RETORNAR DATO SIGUIENTE DEL CURRENT Y ACTUALIZAR CURRENT A NEXT
+    //siento que debe faltar alguna pregunta.
+    list->current= list->current->next;
+    
+    return list->current->data;
 }
 
 // 3. Programe las funciones void * lastList(List * list) y void * prevList(List * list).
