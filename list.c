@@ -72,7 +72,12 @@ void * nextList(List * list) {
 //   - La segunda función retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.
 
 void * lastList(List * list) {
-    return NULL;
+    //si hay que retornar el ultimo de la lista me imagino que hay que recorrer toda la lista y actualizar hasta que
+    //el siguiente de el current sea null y ahi dejar de iterar..
+    //el tema es que tenemos un tail.. por lo que no se si debemos simplemente retornar ese o recorrer con current..
+    if(list == NULL || list->head == NULL) return NULL;
+    list->current = list->tail;
+    return list->current->data;
 }
 
 void * prevList(List * list) {
