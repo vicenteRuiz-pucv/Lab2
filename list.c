@@ -81,7 +81,12 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-    return NULL;
+    if(list == NULL || list->head == NULL) return NULL;
+    //QUE OCURRE SI ESTAMOS PARADOS EN EL PRIMERO? retornamos lo de el primero? o null?
+    if(list->current->data == list->head->data) return NULL;
+    //EN MEDIO DE LA LISTA!
+    list->current= list->current->prev;
+    return list->current->data;
 }
 
 // 4. Programe la función void pushFront(List * list, void * data), la cual agrega un dato al comienzo de la lista.
