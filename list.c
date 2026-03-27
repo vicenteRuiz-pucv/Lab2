@@ -139,7 +139,7 @@ void pushCurrent(List * list, void * data)
     //ahora el antiguo current apunta a auxiliar!
     list->current->next= auxiliar;
     auxiliar->prev= list->current;
-    
+    list->current = auxiliar;
 }
 
 void * popFront(List * list) {
