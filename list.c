@@ -137,7 +137,7 @@ void pushCurrent(List * list, void * data)
     
     //CASO 1. LA LISTA ESTA VACIA
 
-    if(list == NUll)
+    if(list == NULL)
     {
         //ENTONCES EL AUXILIAR QUEDARA COMO EL UNICO ELEMENTO Y ADEMAS LO DEJAMOS COMO EL TAIL
         list->head = auxiliar;
