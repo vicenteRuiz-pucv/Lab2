@@ -63,7 +63,7 @@ void * nextList(List * list) {
     //PREGUNTAMOS SI EL CURRENT O LA LISTA ES NULL..
     if(list->current == NULL  || list == NULL) return NULL;
     list->current= list->current->next;
-    if(lista->current == NULL) return NULL;
+    if(list->current == NULL) return NULL;
     return list->current->data;
 }
 
