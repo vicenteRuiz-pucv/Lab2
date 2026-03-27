@@ -144,7 +144,7 @@ void pushCurrent(List * list, void * data)
         //list->head->data= data;
         //list->tail= auxiliar;
     }
-    if(auxiliar->next == NULL && list != NULL)
+    if(list->current->next == NULL && list != NULL)
     {    
     //hacemos que apunten al mismo sitio
     auxiliar->next= list->current->next;

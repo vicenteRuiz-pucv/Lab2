@@ -368,3 +368,9 @@ list.c:147:16: error: ‘*auxiliar.next’ is used uninitialized [-Werror=uninit
       |        ~~~~~~~~^~~~~~
 cc1: all warnings being treated as errors
 47bdac1
+Fri Mar 27 06:03:19 PM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|0
+total_score: 60/60
+5ea8ac0
