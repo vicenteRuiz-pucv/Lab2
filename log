@@ -287,3 +287,13 @@ Fri Mar 27 04:36:19 AM UTC 2026:
  tests:  11|1
 total_score: 50/60
 04756ed
+Fri Mar 27 05:17:51 AM UTC 2026: 
+ list.c | 56 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 55 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:188:9: error: implicit declaration of function ‘clean’ [-Wimplicit-function-declaration]
+  188 |         clean(list->head);
+      |         ^~~~~
+674ce89

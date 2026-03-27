@@ -139,7 +139,9 @@ void pushCurrent(List * list, void * data)
     auxiliar->next= list->current->next;
     //ahora el antiguo current apunta a auxiliar!
     list->current->next= auxiliar;
+    //conectamos el nodo previo a auxiliar(ahora es el ultimo) con el nodo current!
     auxiliar->prev= list->current;
+    //dejamos auxiliar como el tail!
     list->tail = auxiliar;
 }
 
@@ -156,10 +158,62 @@ void * popBack(List * list) {
 // 6. Programe la función void* popCurrent(List * list), la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el dato del nodo eliminado.
 // Nota: El current debe quedar apuntando al nodo siguiente del eliminado.
 
-void * popCurrent(List * list) 
+void* popCurrent(List * list) 
 {
-    
-    return NULL;
+    //debemos retornar un puntero a void..
+    //suponiendo que la lista esta llena
+    //igualmente haremos las preguntas de seguridad, no se puede eliminar la nada!
+
+    if(list == NULL) return NULL;
+    //que pasa si la lista no esta vacia?
+    //debemos eliminar el puntero actual!
+    //por ende nos ponemos en tres casos.
+    //estamos eliminando el primero de la lista
+    //estamos eliminando uno del medio..
+    //estamos eliminando uno del final
+
+    //ELIMINAR EL HEAD!
+    if(list->current == list->head)
+    {
+        //SI EL CURRENT ES EL HEAD DEBEMOS DEJAR EL PREVIO A EL SIGUIENTE EN NULL Y DEJARLO COMO HEAD!
+        //DEBEMOS RETORNAR EL DATO DEL NODO QUE ELIMINAMOS! SOLUCIONADO!
+        
+        //PRIMERO NOS ASEGURAMOS DE CUIDAR EL NODO QUE VAMOS A ELIMINAR
+        void* dato = list->current->data;
+        //LUEGO DEBEMOS PASAR EL CURRENT AL SIGUIENTE
+        list->current= list->current->next;
+        //LUEGO DEBEMOS DEJAR EL PREVIO A CURRENT EN NULL
+        list->current->prev= NULL;
+        //USAMOS EL CLEAN EN EL HEAD
+        clean(list->head);
+        //DEFINIMOS HEAD COMO EL CURRENT
+        list->head= list->current;
+        //RETORNAMOS DATO
+        return dato;
+    }
+    if(list->current == list->tail)
+    {
+        //PRIMERO NOS ASEGURAMOS DE CUIDAR EL NODO QUE VAMOS A ELIMINAR
+        void* dato = list->current->data;
+        //LUEGO DEBEMOS PASAR EL CURRENT AL ANTERIOR
+        list->current= list->current->prev;
+        //LUEGO DEBEMOS DEJAR EL SIGUIENTE A CURRENT EN NULL
+        list->current->next= NULL;
+        //USAMOS EL CLEAN EN EL TAIL
+        clean(list->tail);
+        //DEFINIMOS TAIL COMO EL CURRENT
+        list->tail= list->current;
+        //RETORNAMOS DATO
+        return dato;
+    }
+    //SI ESTAMOS AL MEDIO?
+    void* dato = list->current->data;
+    //CONECTAMOS EL NODO ANTERIOR A EL CURRENT CONECTADO CON EL SIGUIENTE A CURRENT
+    list->current->prev->next= list->current->next;
+    //CONECTAMOS EL NODO SIGUIENTE CON EL NODO ANTERIOR
+    list->current->next->prev= list->current->prev;
+    clean(list->current);
+    return dato;
 }
 
 void cleanList(List * list) {
