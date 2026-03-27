@@ -52,9 +52,9 @@ void * firstList(List * list) {
     //SUPONDRE QUE LA LISTA ESTA LLENADA PARA PODER RECORRERLA
     //RETORNAR DATO DEL HEAD Y ACTUALIZAR CURRENT PARA QUE APUNTE A ESE NODO
     list->current= list->head;
+    void* dato= current->data;
     
-    
-    return current->data;
+    return dato;
 }
 
 void * nextList(List * list) {
