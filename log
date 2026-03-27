@@ -339,3 +339,15 @@ Fri Mar 27 05:53:28 PM UTC 2026:
  tests:  11|1
 total_score: 50/60
 fc25643
+Fri Mar 27 05:57:33 PM UTC 2026: 
+ list.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:140:16: error: ‘NUll’ undeclared (first use in this function); did you mean ‘NULL’?
+  140 |     if(list == NUll)
+      |                ^~~~
+      |                NULL
+list.c:140:16: note: each undeclared identifier is reported only once for each function it appears in
+d6edb0f

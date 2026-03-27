@@ -135,8 +135,17 @@ void pushCurrent(List * list, void * data)
     auxiliar->data = data;
     //esto funciona cuando estamos en la ultima casilla?
     
-    
-    /*
+    //CASO 1. LA LISTA ESTA VACIA
+
+    if(list == NUll)
+    {
+        //ENTONCES EL AUXILIAR QUEDARA COMO EL UNICO ELEMENTO Y ADEMAS LO DEJAMOS COMO EL TAIL
+        list->head = auxiliar;
+        list->head->data= data;
+        //list->tail= auxiliar;
+    }
+    else
+    {    
     //hacemos que apunten al mismo sitio
     auxiliar->next= list->current->next;
     //ahora el antiguo current apunta a auxiliar!
@@ -145,7 +154,7 @@ void pushCurrent(List * list, void * data)
     auxiliar->prev= list->current;
     //dejamos auxiliar como el tail!
     list->tail = auxiliar;
-    */
+    }
 
 }
 
