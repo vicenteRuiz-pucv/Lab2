@@ -37,3 +37,14 @@ Fri Mar 27 01:59:10 AM UTC 2026:
  tests:  1|5
 total_score: 10/60
 96659c0
+Fri Mar 27 01:59:39 AM UTC 2026: 
+ list.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:55:11: error: unused variable ‘dato’ [-Werror=unused-variable]
+   55 |     void* dato= list->head->data;
+      |           ^~~~
+cc1: all warnings being treated as errors
+20c8809
