@@ -97,3 +97,15 @@ Fri Mar 27 02:19:43 AM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 7851403
+Fri Mar 27 02:24:28 AM UTC 2026: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:55:8: error: ‘lista’ undeclared (first use in this function); did you mean ‘list’?
+   55 |     if(lista == NULL) return NULL;
+      |        ^~~~~
+      |        list
+list.c:55:8: note: each undeclared identifier is reported only once for each function it appears in
+d43c33c
