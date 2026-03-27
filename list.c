@@ -141,10 +141,10 @@ void pushCurrent(List * list, void * data)
     {
         //ENTONCES EL AUXILIAR QUEDARA COMO EL UNICO ELEMENTO Y ADEMAS LO DEJAMOS COMO EL TAIL
         list->head = auxiliar;
-        list->head->data= data;
+        //list->head->data= data;
         //list->tail= auxiliar;
     }
-    else
+    if(auxiliar->next == NULL && list != NULL)
     {    
     //hacemos que apunten al mismo sitio
     auxiliar->next= list->current->next;
@@ -155,7 +155,11 @@ void pushCurrent(List * list, void * data)
     //dejamos auxiliar como el tail!
     list->tail = auxiliar;
     }
-
+    auxiliar->next= list->current->next;
+    //ahora el antiguo current apunta a auxiliar!
+    list->current->next= auxiliar;
+    //conectamos el nodo previo a auxiliar(ahora es el ultimo) con el nodo current!
+    auxiliar->prev= list->current;
 }
 
 void * popFront(List * list) {
